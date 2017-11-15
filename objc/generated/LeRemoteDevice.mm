@@ -17,9 +17,9 @@
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x481, 3, 4, -1, -1, -1, -1 },
-    { NULL, "V", 0x481, 5, 6, -1, -1, -1, -1 },
-    { NULL, "V", 0x481, 7, 8, -1, -1, -1, -1 },
+    { NULL, "V", 0x401, 3, 4, -1, 5, -1, -1 },
+    { NULL, "V", 0x481, 6, 7, -1, -1, -1, -1 },
+    { NULL, "V", 0x481, 8, 9, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
@@ -33,14 +33,14 @@
   methods[4].selector = @selector(disconnect);
   methods[5].selector = @selector(close);
   methods[6].selector = @selector(startServicesDiscovery);
-  methods[7].selector = @selector(startServicesDiscoveryWithJavaUtilUUIDArray:);
+  methods[7].selector = @selector(startServicesDiscoveryWithJavaUtilMap:);
   methods[8].selector = @selector(setCharacteristicWriteListenerWithLeCharacteristicWriteListener:withJavaUtilUUIDArray:);
   methods[9].selector = @selector(setCharacteristicListenerWithLeCharacteristicListener:withJavaUtilUUIDArray:);
   methods[10].selector = @selector(getName);
   methods[11].selector = @selector(readRssi);
   methods[12].selector = @selector(refreshDeviceCache);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "addListener", "LLeRemoteDeviceListener;", "removeListener", "startServicesDiscovery", "[LJavaUtilUUID;", "setCharacteristicWriteListener", "LLeCharacteristicWriteListener;[LJavaUtilUUID;", "setCharacteristicListener", "LLeCharacteristicListener;[LJavaUtilUUID;" };
+  static const void *ptrTable[] = { "addListener", "LLeRemoteDeviceListener;", "removeListener", "startServicesDiscovery", "LJavaUtilMap;", "(Ljava/util/Map<Ljava/util/UUID;Ljava/util/List;>;)V", "setCharacteristicWriteListener", "LLeCharacteristicWriteListener;[LJavaUtilUUID;", "setCharacteristicListener", "LLeCharacteristicListener;[LJavaUtilUUID;" };
   static const J2ObjcClassInfo _LeRemoteDevice = { "LeRemoteDevice", "houtbecke.rs.le", ptrTable, methods, NULL, 7, 0x609, 13, 0, -1, -1, -1, -1, -1 };
   return &_LeRemoteDevice;
 }

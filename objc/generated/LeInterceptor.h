@@ -174,7 +174,7 @@
 - (void)serviceDiscoveryStartedWithInterceptingLeRemoteDevice:(InterceptingLeRemoteDevice *)iLeRemoteDevice;
 
 - (void)serviceDiscoveryStartedWithInterceptingLeRemoteDevice:(InterceptingLeRemoteDevice *)iLeRemoteDevice
-                                        withJavaUtilUUIDArray:(IOSObjectArray *)uuids;
+                                              withJavaUtilMap:(id<JavaUtilMap>)services;
 
 - (InterceptingLeGattCharacteristic *)serviceGotCharacteristicWithInterceptingLeGattService:(InterceptingLeGattService *)iLeGattService
                                                                    withLeGattCharacteristic:(id<LeGattCharacteristic>)leGattCharacteristic;

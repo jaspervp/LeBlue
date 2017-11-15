@@ -11,6 +11,7 @@
 #include "LeInterceptor.h"
 #include "LeRemoteDevice.h"
 #include "LeRemoteDeviceListener.h"
+#include "java/util/Map.h"
 
 @implementation InterceptingLeRemoteDevice
 
@@ -72,10 +73,10 @@
   }
 }
 
-- (void)startServicesDiscoveryWithJavaUtilUUIDArray:(IOSObjectArray *)uuids {
+- (void)startServicesDiscoveryWithJavaUtilMap:(id<JavaUtilMap>)services {
   @synchronized(leInterceptor_) {
-    [((LeInterceptor *) nil_chk(leInterceptor_)) serviceDiscoveryStartedWithInterceptingLeRemoteDevice:self withJavaUtilUUIDArray:uuids];
-    [((id<LeRemoteDevice>) nil_chk(leRemoteDevice_)) startServicesDiscoveryWithJavaUtilUUIDArray:uuids];
+    [((LeInterceptor *) nil_chk(leInterceptor_)) serviceDiscoveryStartedWithInterceptingLeRemoteDevice:self withJavaUtilMap:services];
+    [((id<LeRemoteDevice>) nil_chk(leRemoteDevice_)) startServicesDiscoveryWithJavaUtilMap:services];
   }
 }
 
@@ -148,15 +149,15 @@
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x81, 4, 5, -1, -1, -1, -1 },
-    { NULL, "V", 0x81, 6, 7, -1, -1, -1, -1 },
-    { NULL, "V", 0x81, 8, 9, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 4, 5, -1, 6, -1, -1 },
+    { NULL, "V", 0x81, 7, 8, -1, -1, -1, -1 },
+    { NULL, "V", 0x81, 9, 10, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "Z", 0x1, 10, 11, -1, -1, -1, -1 },
-    { NULL, "I", 0x1, 12, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, 13, -1, -1, -1, -1, -1 },
+    { NULL, "Z", 0x1, 11, 12, -1, -1, -1, -1 },
+    { NULL, "I", 0x1, 13, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 14, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -168,7 +169,7 @@
   methods[5].selector = @selector(disconnect);
   methods[6].selector = @selector(close);
   methods[7].selector = @selector(startServicesDiscovery);
-  methods[8].selector = @selector(startServicesDiscoveryWithJavaUtilUUIDArray:);
+  methods[8].selector = @selector(startServicesDiscoveryWithJavaUtilMap:);
   methods[9].selector = @selector(setCharacteristicWriteListenerWithLeCharacteristicWriteListener:withJavaUtilUUIDArray:);
   methods[10].selector = @selector(setCharacteristicListenerWithLeCharacteristicListener:withJavaUtilUUIDArray:);
   methods[11].selector = @selector(getName);
@@ -181,7 +182,7 @@
   static const J2ObjcFieldInfo fields[] = {
     { "leRemoteDevice_", "LLeRemoteDevice;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LLeRemoteDevice;LLeInterceptor;", "addListener", "LLeRemoteDeviceListener;", "removeListener", "startServicesDiscovery", "[LJavaUtilUUID;", "setCharacteristicWriteListener", "LLeCharacteristicWriteListener;[LJavaUtilUUID;", "setCharacteristicListener", "LLeCharacteristicListener;[LJavaUtilUUID;", "equals", "LNSObject;", "hashCode", "toString" };
+  static const void *ptrTable[] = { "LLeRemoteDevice;LLeInterceptor;", "addListener", "LLeRemoteDeviceListener;", "removeListener", "startServicesDiscovery", "LJavaUtilMap;", "(Ljava/util/Map<Ljava/util/UUID;Ljava/util/List;>;)V", "setCharacteristicWriteListener", "LLeCharacteristicWriteListener;[LJavaUtilUUID;", "setCharacteristicListener", "LLeCharacteristicListener;[LJavaUtilUUID;", "equals", "LNSObject;", "hashCode", "toString" };
   static const J2ObjcClassInfo _InterceptingLeRemoteDevice = { "InterceptingLeRemoteDevice", "houtbecke.rs.le.interceptor", ptrTable, methods, fields, 7, 0x1, 17, 1, -1, -1, -1, -1, -1 };
   return &_InterceptingLeRemoteDevice;
 }

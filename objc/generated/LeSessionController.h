@@ -191,7 +191,7 @@
 - (void)remoteDeviceStartServiceDiscoveryWithLeRemoteDeviceMock:(LeRemoteDeviceMock *)leRemoteDeviceMock;
 
 - (void)remoteDeviceStartServiceDiscoveryWithLeRemoteDeviceMock:(LeRemoteDeviceMock *)leRemoteDeviceMock
-                                          withJavaUtilUUIDArray:(IOSObjectArray *)uuids;
+                                                withJavaUtilMap:(id<JavaUtilMap>)services;
 
 - (jboolean)serviceEnableCharacteristicNotificationWithLeGattServiceMock:(LeGattServiceMock *)leGattServiceMock
                                                         withJavaUtilUUID:(JavaUtilUUID *)characteristic;

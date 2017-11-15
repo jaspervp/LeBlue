@@ -22,6 +22,7 @@
 
 @class IOSObjectArray;
 @class LeInterceptor;
+@protocol JavaUtilMap;
 @protocol LeCharacteristicListener;
 @protocol LeCharacteristicWriteListener;
 @protocol LeRemoteDeviceListener;
@@ -66,7 +67,7 @@
 
 - (void)startServicesDiscovery;
 
-- (void)startServicesDiscoveryWithJavaUtilUUIDArray:(IOSObjectArray *)uuids;
+- (void)startServicesDiscoveryWithJavaUtilMap:(id<JavaUtilMap>)services;
 
 - (NSString *)description;
 

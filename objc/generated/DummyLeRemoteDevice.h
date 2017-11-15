@@ -17,6 +17,7 @@
 #include "LeRemoteDevice.h"
 
 @class IOSObjectArray;
+@protocol JavaUtilMap;
 @protocol LeCharacteristicListener;
 @protocol LeCharacteristicWriteListener;
 @protocol LeRemoteDeviceListener;
@@ -53,7 +54,7 @@
 
 - (void)startServicesDiscovery;
 
-- (void)startServicesDiscoveryWithJavaUtilUUIDArray:(IOSObjectArray *)uuids;
+- (void)startServicesDiscoveryWithJavaUtilMap:(id<JavaUtilMap>)services;
 
 @end
 

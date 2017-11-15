@@ -13,6 +13,7 @@
 #define LeRemoteDevice_
 
 @class IOSObjectArray;
+@protocol JavaUtilMap;
 @protocol LeCharacteristicListener;
 @protocol LeCharacteristicWriteListener;
 @protocol LeRemoteDeviceListener;
@@ -33,7 +34,7 @@
 
 - (void)startServicesDiscovery;
 
-- (void)startServicesDiscoveryWithJavaUtilUUIDArray:(IOSObjectArray *)uuids;
+- (void)startServicesDiscoveryWithJavaUtilMap:(id<JavaUtilMap>)services;
 
 - (void)setCharacteristicWriteListenerWithLeCharacteristicWriteListener:(id<LeCharacteristicWriteListener>)listener
                                                   withJavaUtilUUIDArray:(IOSObjectArray *)uuids;

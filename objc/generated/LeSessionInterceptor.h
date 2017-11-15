@@ -35,6 +35,7 @@
 @class LeGattStatus;
 @protocol EventSink;
 @protocol JavaUtilList;
+@protocol JavaUtilMap;
 @protocol LeScanRecord;
 
 @interface LeSessionInterceptor : LeInterceptor {
@@ -148,7 +149,7 @@
 - (void)serviceDiscoveryStartedWithInterceptingLeRemoteDevice:(InterceptingLeRemoteDevice *)iLeRemoteDevice;
 
 - (void)serviceDiscoveryStartedWithInterceptingLeRemoteDevice:(InterceptingLeRemoteDevice *)iLeRemoteDevice
-                                        withJavaUtilUUIDArray:(IOSObjectArray *)uuids;
+                                              withJavaUtilMap:(id<JavaUtilMap>)services;
 
 - (void)servicesDiscoveredWithInterceptingLeRemoteDeviceListener:(InterceptingLeRemoteDeviceListener *)iLeRemoteDeviceListener
                                         withInterceptingLeDevice:(InterceptingLeDevice *)iLeDevice

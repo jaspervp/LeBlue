@@ -19,6 +19,7 @@
 @class IOSObjectArray;
 @class JavaLangInteger;
 @class LeDeviceMock;
+@protocol JavaUtilMap;
 @protocol LeCharacteristicListener;
 @protocol LeCharacteristicWriteListener;
 @protocol LeMockController;
@@ -67,7 +68,7 @@
 
 - (void)startServicesDiscovery;
 
-- (void)startServicesDiscoveryWithJavaUtilUUIDArray:(IOSObjectArray *)uuids;
+- (void)startServicesDiscoveryWithJavaUtilMap:(id<JavaUtilMap>)services;
 
 // Disallowed inherited constructors, do not use.
 

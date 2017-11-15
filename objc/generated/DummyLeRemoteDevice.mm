@@ -5,6 +5,10 @@
 #include "LeCharacteristicListener.h"
 #include "LeCharacteristicWriteListener.h"
 #include "LeRemoteDeviceListener.h"
+#include "java/util/ArrayList.h"
+#include "java/util/List.h"
+#include "java/util/Map.h"
+#include "java/util/Set.h"
 
 @implementation HoutbeckeRsLeDummyDummyLeRemoteDevice
 
@@ -37,7 +41,8 @@ J2OBJC_IGNORE_DESIGNATED_END
 - (void)startServicesDiscovery {
 }
 
-- (void)startServicesDiscoveryWithJavaUtilUUIDArray:(IOSObjectArray *)uuids {
+- (void)startServicesDiscoveryWithJavaUtilMap:(id<JavaUtilMap>)services {
+  id<JavaUtilList> uuids = create_JavaUtilArrayList_initWithJavaUtilCollection_([((id<JavaUtilMap>) nil_chk(services)) keySet]);
 }
 
 - (void)setCharacteristicWriteListenerWithLeCharacteristicWriteListener:(id<LeCharacteristicWriteListener>)listener
@@ -68,9 +73,9 @@ J2OBJC_IGNORE_DESIGNATED_END
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x81, 3, 4, -1, -1, -1, -1 },
-    { NULL, "V", 0x81, 5, 6, -1, -1, -1, -1 },
-    { NULL, "V", 0x81, 7, 8, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 3, 4, -1, 5, -1, -1 },
+    { NULL, "V", 0x81, 6, 7, -1, -1, -1, -1 },
+    { NULL, "V", 0x81, 8, 9, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
@@ -85,14 +90,14 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[5].selector = @selector(disconnect);
   methods[6].selector = @selector(close);
   methods[7].selector = @selector(startServicesDiscovery);
-  methods[8].selector = @selector(startServicesDiscoveryWithJavaUtilUUIDArray:);
+  methods[8].selector = @selector(startServicesDiscoveryWithJavaUtilMap:);
   methods[9].selector = @selector(setCharacteristicWriteListenerWithLeCharacteristicWriteListener:withJavaUtilUUIDArray:);
   methods[10].selector = @selector(setCharacteristicListenerWithLeCharacteristicListener:withJavaUtilUUIDArray:);
   methods[11].selector = @selector(getName);
   methods[12].selector = @selector(readRssi);
   methods[13].selector = @selector(refreshDeviceCache);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "addListener", "LLeRemoteDeviceListener;", "removeListener", "startServicesDiscovery", "[LJavaUtilUUID;", "setCharacteristicWriteListener", "LLeCharacteristicWriteListener;[LJavaUtilUUID;", "setCharacteristicListener", "LLeCharacteristicListener;[LJavaUtilUUID;" };
+  static const void *ptrTable[] = { "addListener", "LLeRemoteDeviceListener;", "removeListener", "startServicesDiscovery", "LJavaUtilMap;", "(Ljava/util/Map<Ljava/util/UUID;Ljava/util/List;>;)V", "setCharacteristicWriteListener", "LLeCharacteristicWriteListener;[LJavaUtilUUID;", "setCharacteristicListener", "LLeCharacteristicListener;[LJavaUtilUUID;" };
   static const J2ObjcClassInfo _HoutbeckeRsLeDummyDummyLeRemoteDevice = { "DummyLeRemoteDevice", "houtbecke.rs.le.dummy", ptrTable, methods, NULL, 7, 0x1, 14, 0, -1, -1, -1, -1, -1 };
   return &_HoutbeckeRsLeDummyDummyLeRemoteDevice;
 }
