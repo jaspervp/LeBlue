@@ -1,5 +1,7 @@
 package houtbecke.rs.le.interceptor;
 
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import houtbecke.rs.le.LeCharacteristicListener;
@@ -75,10 +77,10 @@ public class InterceptingLeRemoteDevice extends LeIntercepting implements LeRemo
     }
 
     @Override
-    public void startServicesDiscovery(UUID... uuids) {
+    public void startServicesDiscovery(Map<UUID, List> services) {
         synchronized(leInterceptor) {
-            leInterceptor.serviceDiscoveryStarted(this,uuids);
-            leRemoteDevice.startServicesDiscovery(uuids);
+            leInterceptor.serviceDiscoveryStarted(this,services);
+            leRemoteDevice.startServicesDiscovery(services);
         }
     }
 

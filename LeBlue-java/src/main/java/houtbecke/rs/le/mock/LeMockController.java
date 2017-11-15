@@ -1,6 +1,7 @@
 package houtbecke.rs.le.mock;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import houtbecke.rs.le.LeCharacteristicListener;
@@ -24,7 +25,7 @@ public interface LeMockController {
 
     void remoteDeviceStartServiceDiscovery(LeRemoteDeviceMock leRemoteDeviceMock);
 
-    void remoteDeviceStartServiceDiscovery(LeRemoteDeviceMock leRemoteDeviceMock, UUID[] uuids);
+    void remoteDeviceStartServiceDiscovery(LeRemoteDeviceMock leRemoteDeviceMock, Map<UUID, List> services);
 
     void remoteDeviceClose(LeRemoteDeviceMock leRemoteDeviceMock);
 

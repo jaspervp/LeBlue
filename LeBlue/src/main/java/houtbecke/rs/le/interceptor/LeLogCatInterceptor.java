@@ -4,6 +4,7 @@ import android.util.Log;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import houtbecke.rs.le.LeDeviceState;
@@ -168,8 +169,8 @@ public class LeLogCatInterceptor extends LeInterceptor {
     }
 
     @Override
-    public void serviceDiscoveryStarted(InterceptingLeRemoteDevice iLeRemoteDevice, UUID[] uuids) {
-        Log.i(TAG, "serviceDiscoveryStarted: "+iLeRemoteDevice +" " +Arrays.toString(uuids));
+    public void serviceDiscoveryStarted(InterceptingLeRemoteDevice iLeRemoteDevice, Map<UUID,List> services) {
+        Log.i(TAG, "serviceDiscoveryStarted: "+iLeRemoteDevice +" " +Arrays.toString(services.keySet().toArray(new UUID[0])));
     }
 
     @Override

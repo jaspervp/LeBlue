@@ -1,5 +1,7 @@
 package houtbecke.rs.le.mock;
 
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import houtbecke.rs.le.LeCharacteristicListener;
@@ -57,9 +59,10 @@ public class LeRemoteDeviceMock implements LeRemoteDevice {
     }
 
     @Override
-    public void startServicesDiscovery(UUID... uuids) {
-        mockController.remoteDeviceStartServiceDiscovery(this,uuids);
+    public void startServicesDiscovery(Map<UUID, List> services) {
+        mockController.remoteDeviceStartServiceDiscovery(this,services);
     }
+
 
     @Override
     public void setCharacteristicWriteListener(LeCharacteristicWriteListener listener, UUID... uuids) {

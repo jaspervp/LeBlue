@@ -1,6 +1,7 @@
 package houtbecke.rs.le;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 public interface LeRemoteDevice {
@@ -19,7 +20,7 @@ public interface LeRemoteDevice {
 
     void startServicesDiscovery();
 
-    void startServicesDiscovery(UUID... uuids);
+    void startServicesDiscovery(Map<UUID,List> services);
 
     void setCharacteristicWriteListener(LeCharacteristicWriteListener listener, UUID... uuids);
 

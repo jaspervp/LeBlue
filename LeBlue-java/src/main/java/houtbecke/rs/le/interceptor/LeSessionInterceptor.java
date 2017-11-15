@@ -1,6 +1,7 @@
 package houtbecke.rs.le.interceptor;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import houtbecke.rs.le.LeDeviceState;
@@ -191,17 +192,8 @@ public class LeSessionInterceptor extends LeInterceptor {
     }
 
     @Override
-    public void serviceDiscoveryStarted(InterceptingLeRemoteDevice iLeRemoteDevice, UUID[] uuids) {
-        if  (uuids != null){
-            String[] args = new String[ uuids.length];
-            LeUtil.putUUIDsInStringArray(uuids, args, 0);
-            drainEvent(remoteDeviceStartServiceDiscovery, iLeRemoteDevice,args);
-
-        } else{
+    public void serviceDiscoveryStarted(InterceptingLeRemoteDevice iLeRemoteDevice, Map<UUID, List> services) {
             drainEvent(remoteDeviceStartServiceDiscovery, iLeRemoteDevice);
-
-        }
-
     }
 
     @Override

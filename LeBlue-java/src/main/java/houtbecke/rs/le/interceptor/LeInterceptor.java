@@ -166,7 +166,7 @@ public abstract class LeInterceptor {
 
     public abstract void serviceDiscoveryStarted(InterceptingLeRemoteDevice iLeRemoteDevice);
 
-    public abstract void serviceDiscoveryStarted(InterceptingLeRemoteDevice iLeRemoteDevice, UUID[] uuids);
+    public abstract void serviceDiscoveryStarted(InterceptingLeRemoteDevice iLeRemoteDevice, Map<UUID,List> services);
 
     public abstract void gotRemoteDeviceName(InterceptingLeRemoteDevice iLeRemoteDevice, String name);
 

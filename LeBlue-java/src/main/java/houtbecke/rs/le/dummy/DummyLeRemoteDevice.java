@@ -1,5 +1,8 @@
 package houtbecke.rs.le.dummy;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import houtbecke.rs.le.LeCharacteristicListener;
@@ -44,9 +47,10 @@ public class DummyLeRemoteDevice implements LeRemoteDevice {
     }
 
     @Override
-    public void startServicesDiscovery(UUID... uuids) {
-
+    public void startServicesDiscovery(Map<UUID, List> services) {
+        List uuids = new ArrayList<>(services.keySet());
     }
+
 
     @Override
     public void setCharacteristicWriteListener(LeCharacteristicWriteListener listener, UUID... uuids) {

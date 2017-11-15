@@ -892,12 +892,12 @@ public class LeSessionController implements LeMockController {
             lock.unlock();
         }
     }
+
     @Override
-    public  void remoteDeviceStartServiceDiscovery(LeRemoteDeviceMock leRemoteDeviceMock, UUID[] uuids) {
+    public void remoteDeviceStartServiceDiscovery(LeRemoteDeviceMock leRemoteDeviceMock, Map<UUID, List> services) {
         lock.lock();
         try {
-            checkEvent(remoteDeviceStartServiceDiscovery, leRemoteDeviceMock,Arrays.toString(uuids));
-
+            checkEvent(remoteDeviceStartServiceDiscovery, leRemoteDeviceMock);
         }finally {
             lock.unlock();
         }
